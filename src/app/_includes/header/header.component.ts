@@ -8,4 +8,6 @@ export class HeaderComponent {
     constructor() {
 
     }
+
+   my_date = new Date("1987,03,26");
 }
