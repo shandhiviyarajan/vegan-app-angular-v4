@@ -1,7 +1,5 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-
-
 import {HomeComponent} from "../../components/home/home.component";
 import {MenuComponent} from "../../components/menu/menu.component";
 import {CategoryComponent} from "../../components/category/category.component";
@@ -9,6 +7,7 @@ import {FoodComponent} from "../../components/food/food.component";
 import {CartComponent} from "../../components/cart/cart.component";
 import {LoginComponent} from "../../components/login/login.component";
 import {RegisterComponent} from "../../components/register/register.component";
+import {HeaderComponent} from "../../_includes/header/header.component";
 
 
 const routes: Routes = [
@@ -24,17 +23,14 @@ const routes: Routes = [
             component: CategoryComponent
         }]
     },
-
     {
         path: 'menu',
         component: FoodComponent
     },
-
     {
         path: 'cart',
         component: CartComponent
     },
-
     {
         path: 'login',
         component: LoginComponent
@@ -49,10 +45,12 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     {
-        path:'**',
-        redirectTo:'home'
+        path: '**',
+        redirectTo: 'home'
     }
 ];
+
+export const PageComponents = [HeaderComponent, HomeComponent, MenuComponent, CategoryComponent, FoodComponent, CartComponent, LoginComponent, RegisterComponent];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
@@ -62,3 +60,4 @@ const routes: Routes = [
 export class AppRouterModule {
 
 }
+
