@@ -24,17 +24,19 @@
     </p>
 
     <form
-          (ngSubmit)="Login()"
-          #loginForm="ngForm"
-          class="ov-form">
-        <input ngModel="username"
+            (ngSubmit)="login(loginForm.value)"
+            #loginForm="ngForm"
+            class="ov-form">
+        <input ngModel
+               name="username"
                type="text"
                class="form-control"
                placeholder="Username"
                required
 
         >
-        <input ngModel="password"
+        <input ngModel
+               name="password"
                type="password"
                class="form-control"
                placeholder="Password"

@@ -20,7 +20,6 @@
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
-    "@types/jquery": "^3.2.7",
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
     "ngx-order-pipe": "^1.0.2",

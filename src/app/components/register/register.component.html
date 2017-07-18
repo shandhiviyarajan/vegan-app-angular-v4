@@ -11,12 +11,14 @@
     </p>
 
     <form class="ov-form"
-          ngForm="form">
+          #loginForm="ngForm"
+          (ngSubmit)="register(loginForm.value)">
         <input type="text"
                name="email"
                class="form-control"
                placeholder="Email Address"
                required
+               ngModel
 
         >
         <input type="text"
@@ -24,32 +26,30 @@
                class="form-control"
                placeholder="Username"
                required
+               ngModel
 
         >
         <input type="password"
                name="password"
                class="form-control"
                placeholder="Password"
-               required>
-
+               required
+               ngModel>
         <input type="password"
                name="confirm_password"
                class="form-control"
                placeholder="Confirm Password"
                required>
-
-
-        <button>
+        <button type="submit">
             Create an account
         </button>
     </form>
-    {{newUser | json}}
+
     <p class="text-center">
         <a class="ov-link-small" routerLink="/login">
-            Have an account ?  Login here
+            Have an account ? Login here
         </a>
     </p>
-
     <div class="clearfix"></div>
 
 </section>

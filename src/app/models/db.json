@@ -13,6 +13,18 @@
       "password": "abcabc",
       "email": "vipual@cms.lk",
       "id": 2
+    },
+    {
+      "username": "testuser",
+      "password": "123",
+      "email": "test@test.com",
+      "id": 3
+    },
+    {
+      "username": "shehan",
+      "password": "123",
+      "email": "shehan@gmail.com",
+      "id": 4
     }
   ],
   "menu": [

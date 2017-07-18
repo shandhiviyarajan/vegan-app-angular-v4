@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -7,21 +8,26 @@ import {AuthService} from "../../services/auth.service";
 })
 
 export class LoginComponent {
-    constructor(private Auth: AuthService) {
+    constructor(private Auth: AuthService, private router: Router) {
 
     }
-
-    username: string;
-    password: string
 
     /**
      * Login user
      */
-    public userLogin() {
+    public login(form) {
         this.Auth.login({
-            "username": this.username,
-            "password": this.password
-        })
+            "username": form.username,
+            "password": form.password
+        }).subscribe(
+            success => {
+                alert("Login Success");
+                this.router.navigate(['/menu']);
+            },
+            error => {
+                alert("Login failed");
+            }
+        )
     }
 
     public loginOut() {

@@ -17,8 +17,7 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.titleService.setTitle('My awesome app');
-        this.router.events.subscribe((event) => {
-        })
+
     }
 }
 

@@ -20,7 +20,7 @@ export class AuthService {
     //User registration
     create(user) {
 
-        return this.request.post("http://localhost:3000/user/" + user.id, user)
+        return this.request.post("http://localhost:3000/user/",user)
             .map((response: Response) => response.json());
     }
 

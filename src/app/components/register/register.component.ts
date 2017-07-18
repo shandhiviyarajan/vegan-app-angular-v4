@@ -23,17 +23,18 @@ export class RegisterComponent {
     /**
      * Create user
      */
-    public register() {
+    public register(form) {
 
+        console.log(this.router);
 
-        this.newUser.username = this.username;
-        this.newUser.password = this.password;
-        this.newUser.email = this.email;
+        this.newUser.username = form.username;
+        this.newUser.password = form.password;
+        this.newUser.email = form.email;
 
         this.Auth.create(this.newUser).subscribe(
             success => {
                 alert("Registration Successful");
-                this.router.navigate(['/login']);
+                this.router.navigate(['../login']);
             },
             error => {
                 alert("Registration Unsuccessful")

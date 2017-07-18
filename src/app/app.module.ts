@@ -6,7 +6,7 @@ import {OrderModule} from 'ngx-order-pipe';
 
 /*
  Application modules */
-import {AppRouterModule, PageComponents} from "./module/router.module";
+import {AppRouterModule, PageComponents} from "./router.module";
 /*
  Application Components */
 import {AppComponent} from "./app.component";
