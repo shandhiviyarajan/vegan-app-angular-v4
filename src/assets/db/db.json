@@ -1,0 +1,67 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Shan Dhiviyajan",
+      "role": "Designer",
+      "username": "shannboy",
+      "email": "shan@cms.lk",
+      "password": "123123"
+    },
+    {
+      "username": "vipula.s",
+      "password": "abcabc",
+      "email": "vipual@cms.lk",
+      "id": 2
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "title": "Short eats"
+    },
+    {
+      "id": 2,
+      "title": "Short eats"
+    },
+    {
+      "id": 3,
+      "title": "Short eats"
+    },
+    {
+      "id": 4,
+      "title": "Short eats"
+    },
+    {
+      "id": 5,
+      "title": "Short eats"
+    },
+    {
+      "id": 6,
+      "title": "Short eats"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "menu_id": 1,
+      "title": "Product name",
+      "price": 300,
+      "image": "test.jpg"
+    },
+    {
+      "id": 3,
+      "menu_id": 2,
+      "title": "Product name",
+      "price": 370,
+      "image": "test.jpg"
+    },
+    {
+      "id": 2,
+      "menu_id": 2,
+      "title": "Product name",
+      "price": 360,
+      "image": "test.jpg"
+    }
+  ]
+}

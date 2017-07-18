@@ -5,11 +5,14 @@ import {FooterComponent} from "../_includes/footer/footer.component";
 import {SubMenuComponent} from "../_includes/sub_menu/submenu.component";
 import {HomeComponent} from "../components/home/home.component";
 import {MenuComponent} from "../components/menu/menu.component";
-import {CategoryComponent} from "../components/category/category.component";
+import {SubmenuComponent} from "../components/submenu/submenu.component";
 import {FoodComponent} from "../components/food/food.component";
 import {CartComponent} from "../components/cart/cart.component";
 import {LoginComponent} from "../components/login/login.component";
 import {RegisterComponent} from "../components/register/register.component";
+import {SettingsComponent} from "../components/settings/settings.component";
+import {OrdersComponent} from "../components/orders/orders.component";
+import {PageNotFoundComponent} from "../components/404/404.component";
 
 
 const routes: Routes = [
@@ -21,24 +24,33 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        data: {
+            title: 'Home'
+        }
     },
 
     {
         path: 'menu',
-        component: MenuComponent,
-        children: [{
-            path: 'category',
-            component: CategoryComponent
-        }]
+        component: MenuComponent
+    },
+
+    {
+        path: 'menu/:food_name',
+        component: SubmenuComponent
     },
     {
-        path: 'menu',
-        component: FoodComponent
+        path: 'submenu',
+        component: SubmenuComponent
     },
     {
         path: 'cart',
         component: CartComponent
+    },
+
+    {
+        path: 'orders',
+        component: OrdersComponent
     },
     {
         path: 'login',
@@ -48,13 +60,18 @@ const routes: Routes = [
         path: 'register',
         component: RegisterComponent
     },
+
+    {
+        path: 'settingsx',
+        component: SettingsComponent
+    },
     {
         path: '**',
-        redirectTo: 'home'
+        component:PageNotFoundComponent
     }
 ];
 
-export const PageComponents = [HeaderComponent, FooterComponent, SubMenuComponent, HomeComponent, MenuComponent, CategoryComponent, FoodComponent, CartComponent, LoginComponent, RegisterComponent];
+export const PageComponents = [HeaderComponent, FooterComponent, SubMenuComponent, HomeComponent, MenuComponent, SubmenuComponent, FoodComponent, CartComponent, LoginComponent, RegisterComponent, SettingsComponent, OrdersComponent, PageNotFoundComponent];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

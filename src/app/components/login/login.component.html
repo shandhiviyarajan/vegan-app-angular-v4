@@ -1,3 +1,58 @@
-<h2>
-    Login component
-</h2>
+<section id="login_component" class="ov-component">
+
+    <p>
+        &nbsp;
+    </p>
+    <a routerLink="/home" class="logo_small">
+        <img src="/assets/logo_small.svg" alt="">
+    </a>
+    <p>
+        &nbsp;
+    </p>
+    <a class="login_fb">
+        Login with Facebook
+    </a>
+
+    <a class="login_gp">
+        Login with Google
+    </a>
+
+    <p class="or">
+        <strong>
+            or
+        </strong>
+    </p>
+
+    <form
+          (ngSubmit)="Login()"
+          #loginForm="ngForm"
+          class="ov-form">
+        <input ngModel="username"
+               type="text"
+               class="form-control"
+               placeholder="Username"
+               required
+
+        >
+        <input ngModel="password"
+               type="password"
+               class="form-control"
+               placeholder="Password"
+               required>
+
+
+        <button type="submit">
+            Sign in
+        </button>
+    </form>
+    <a class="pull-left" routerLink="/register">
+        Create an account
+    </a>
+
+    <a class="pull-right" routerLink="/forgot">
+        Forgot password ?
+    </a>
+
+    <div class="clearfix"></div>
+
+</section>

@@ -10,6 +10,7 @@ import {AppRouterModule, PageComponents} from "./module/router.module";
 /*
  Application Components */
 import {AppComponent} from "./app.component";
+import {MenuDirective} from "./directives/menu.directive";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {AppComponent} from "./app.component";
     ],
     declarations: [
         AppComponent,
-        PageComponents
+        PageComponents,
+        MenuDirective
     ],
 
     bootstrap: [AppComponent]

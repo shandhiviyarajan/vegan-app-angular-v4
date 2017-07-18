@@ -1,3 +1,55 @@
-<h2>
-    Register Here..
-</h2>
+<section id="register_component" class="ov-component">
+
+    <p>
+        &nbsp;
+    </p>
+    <a routerLink="/home" class="logo_small">
+        <img src="/assets/logo_small.svg" alt="">
+    </a>
+    <p>
+        &nbsp;
+    </p>
+
+    <form class="ov-form"
+          ngForm="form">
+        <input type="text"
+               name="email"
+               class="form-control"
+               placeholder="Email Address"
+               required
+
+        >
+        <input type="text"
+               name="username"
+               class="form-control"
+               placeholder="Username"
+               required
+
+        >
+        <input type="password"
+               name="password"
+               class="form-control"
+               placeholder="Password"
+               required>
+
+        <input type="password"
+               name="confirm_password"
+               class="form-control"
+               placeholder="Confirm Password"
+               required>
+
+
+        <button>
+            Create an account
+        </button>
+    </form>
+    {{newUser | json}}
+    <p class="text-center">
+        <a class="ov-link-small" routerLink="/login">
+            Have an account ?  Login here
+        </a>
+    </p>
+
+    <div class="clearfix"></div>
+
+</section>

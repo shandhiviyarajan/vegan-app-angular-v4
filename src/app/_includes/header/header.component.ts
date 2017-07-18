@@ -6,8 +6,14 @@ import {Component} from "@angular/core";
 
 export class HeaderComponent {
     constructor() {
-
     }
 
-   my_date = new Date("1987,03,26");
+    my_date:Date = new Date("1987,03,26");
+    side_menu: boolean = false;
+
+
+    public showHideMenu() {
+        this.side_menu = (this.side_menu) ? false : true;
+        console.log(this.side_menu);
+    }
 }

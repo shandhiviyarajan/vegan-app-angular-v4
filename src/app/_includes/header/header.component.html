@@ -1,15 +1,23 @@
 <header>
-    <div id="menu_icon">
-        <a href="#"><img src="/assets/menu.svg" alt=""></a>
+    <div id="menu_icon"
+         (click)="showHideMenu()">
+        <a><img src="/assets/menu.svg" alt=""></a>
     </div>
-    <nav>
+
+    <div id="cart_icon">
+        <a routerLink="/cart">
+            <img src="/assets/cart_white.svg" alt=""></a>
+    </div>
+    <nav id="side_menu"
+         (click)="showHideMenu()"
+         [ngClass]="{'active':side_menu}">
         <div id="user_profile">
             <div class="user_image">
                 <img src="/assets/user.jpg" alt="">
             </div>
             <div class="user_info">
                 <h2>
-                    {{ my_date| date}}
+                    Shan Dhiviyarajan
                 </h2>
                 <p>
                     Designer
@@ -19,18 +27,26 @@
         </div>
         <ul class="menu">
             <li>
-                <a routerLink="menu"> <span>
+                <span>
                     <img src="/assets/grid.svg" alt="">
-                </span> Menu</a>
+                </span>
+                <a routerLink="/menu"
+                   routerLinkActive="active"> Menu</a>
             </li>
             <li>
-                <span><img src="/assets/cart.svg" alt=""></span><a href="#">Cart</a>
+                <span><img src="/assets/cart.svg" alt=""></span>
+                <a
+                        routerLink="/cart"
+                        routerLinkActive="active">
+                    Cart
+                </a>
             </li>
             <li>
                 <span>
                     <img src="/assets/settings.svg" alt="">
                 </span>
-                <a href="#">
+                <a routerLink="/settings"
+                   routerLinkActive="active">
                     Settings
                 </a>
             </li>
@@ -38,25 +54,44 @@
                 <span>
                     <img src="/assets/orders.svg" alt="">
                 </span>
-                <a href="#">
+                <a routerLink="/orders"
+                   routerLinkActive="active">
                     Orders
                 </a>
             </li>
-        </ul>
-
-        <ul class="menu-footer">
             <li>
                 <span>
-                        <img src="/assets/signout.svg" alt="">
+                        <img src="/assets/message.svg" alt="">
                     </span>
-                <a href="#">
-                    Sign Out
+                <a routerLink="/feedback" routerLinkActive="active">
+                    Feedback
+                </a>
+            </li>
+            <li class="space"></li>
+            <li>
+                <span>
+                    <img src="/assets/signout.svg" alt="">
+                </span>
+                <a routerLink="/home">
+                    Sign out
                 </a>
             </li>
         </ul>
+        <ul class="menu-footer">
 
-        <a href="#" class="btn_login">
-            LOGIN
-        </a>
+            <li>
+                <a routerLink="/login"
+                   routerLinkActive="active"
+                   class="btn_rounded_green">
+                    Sign in
+                </a>
+
+                <a routerLink="/register"
+                   routerLinkActive="active"
+                   class="btn_rounded_green">
+                    Register
+                </a>
+            </li>
+        </ul>
     </nav>
 </header>

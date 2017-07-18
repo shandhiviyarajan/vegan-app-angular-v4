@@ -1,17 +1,17 @@
-<section id="home_component">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>
-                    All Menu
-                </h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad amet commodi, dicta
-                    distinctio, enim
-                    est illo ipsa iusto obcaecati optio quibusdam quo quos repellat reprehenderit, soluta ullam vero
-                    vitae.
-                </p>
-            </div>
+<section id="menu_component">
+    <h2>
+        All vegans foods
+    </h2>
+    <div class="row">
+        <div class="col-xs-6" *ngFor="let menu of [0,1,2,3,5,5]">
+            <a routerLink="/menu/short_eats">
+                <h3>
+                    Short eats
+                </h3>
+                <img src="/assets/short_eats.png" alt="">
+
+            </a>
         </div>
     </div>
+
 </section>

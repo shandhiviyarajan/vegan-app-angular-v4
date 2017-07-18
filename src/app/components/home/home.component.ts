@@ -11,26 +11,15 @@ import {ApiService} from "../../services/api.services";
 })
 
 export class HomeComponent implements OnInit {
-
-    public title = "This is home component";
-    public name: string;
-    public id: number;
-    public attandance:Array<any> = [];
-
+    
+    menu: Array<any> = [];
+    show: boolean = false;
 
     constructor(private api_service: ApiService) {
 
     }
 
-
     ngOnInit() {
         console.log("Home Component");
-        this.api_service.getAttandance()
-            .subscribe(
-                response => this.attandance = response.json(),
-                error => console.log(error));
     }
-    
-
-
 }

@@ -1,23 +1,19 @@
-<h2>
-    Home component
-</h2>
-
 <section id="home_component">
     <div class="logo">
         <img src="/assets/logo.svg" alt="">
     </div>
 
-    <button class="btn btn_black">Sign in to order</button>
+    <button class="btn btn_black" routerLink="/login">Sign in to order</button>
     <p class="or">
         or
     </p>
-    <button class="btn btn_black">Check the food menu</button>
-</section>
+    <button class="btn btn_black" routerLink="/menu">Check the food menu</button>
 
-<ul>
-    <li *ngFor="let user of attandance | orderBy:'id'">
-        {{user.id}}
-        {{user.name}}
-        {{user.email}}
-    </li>
-</ul>
+
+    <div *ngIf="show">
+        <p style="color:#fff;">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolorem et fugiat, illum magnam neque nostrum odio quae quam rem, similique sint suscipit totam! Alias cumque nihil repudiandae suscipit velit.
+        </p>
+    </div>
+
+</section>
