@@ -1,0 +1,52 @@
+
+1 vs 2 vs 4
+
+Angular 2/4 is written in Typescript.
+Component-based development
+Object orientation concepts
+ It is good to have mobile support.
+ Easy Templating concepts,
+ Easy routing concepts,
+
+
+
+Anguler 4 / 4.3.0
+
+1. Warm up to ng4 -10 mins
+
+ - Directives
+  1. Component
+  2. Structureal Dirctievs
+  3. Attribute directives
+
+  Demo
+
+ - Router
+ 	1. RouterModule
+ 	3. Routes
+ 	3. ActivatedRouter
+
+ 	Demo
+
+ - Forms
+  1. Template diven forms - Sign up
+  2. Module driven forms - Login form
+
+
+  - Pipes
+
+
+  Demo
+
+ - Services & DI
+   providers
+   Observable
+
+   Demo
+
+2. Warm up to RESTful methods - 10 mins
+	1. using json server
+
+3. Application Structure
+   -
+

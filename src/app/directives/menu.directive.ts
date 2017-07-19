@@ -9,6 +9,8 @@ declare var jQuery: any;
 
 export class MenuDirective {
     constructor(private element: ElementRef) {
+
+
         
     }
 
