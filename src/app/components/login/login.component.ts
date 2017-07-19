@@ -15,13 +15,13 @@ export class LoginComponent implements OnInit {
     }
 
 
-    public login_form: FormGroup;
+    login_form;
 
     ngOnInit() {
 
         this.login_form = new FormGroup({
-            username: new FormControl(""),
-            password: new FormControl("")
+            username: new FormControl(),
+            password: new FormControl()
         });
 
 
@@ -35,8 +35,9 @@ export class LoginComponent implements OnInit {
     /**
      * Login user
      */
-    public
-    login(form) {
+
+    public login(form) {
+        console.log(form);
 
         this.Auth.login({
             "username": form.username,
@@ -56,8 +57,7 @@ export class LoginComponent implements OnInit {
 
     }
 
-    public
-    loginOut() {
+    public loginOut() {
         AuthService.isAuthenticated = false;
         localStorage.removeItem("current_user");
     }
