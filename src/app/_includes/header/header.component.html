@@ -3,29 +3,34 @@
          (click)="showHideMenu()">
         <a><img src="/assets/menu.svg" alt=""></a>
     </div>
-
     <div id="cart_icon">
+        <span id="qty">
+            0
+        </span>
         <a routerLink="/cart">
             <img src="/assets/cart_white.svg" alt=""></a>
     </div>
     <nav id="side_menu"
          (click)="showHideMenu()"
          [ngClass]="{'active':side_menu}">
-        <div id="user_profile">
+        <div id="user_profile" *ngIf="user">
             <div class="user_image">
-                <img src="/assets/user.jpg" alt="">
+                <img [src]="'/assets/'+user.image" alt="" *ngIf="user.image">
+                <img src="/assets/default.svg" alt="" *ngIf="!user.image">
             </div>
             <div class="user_info">
                 <h2>
-                    Shan Dhiviyarajan
+                    <strong>
+                        {{user.name}}
+                    </strong>
                 </h2>
                 <p>
-                    Designer
+                    {{user.role}}
                 </p>
             </div>
             <div class="clearfix"></div>
         </div>
-        <ul class="menu">
+        <ul class="menu" [ngClass]="{'moveDown':!user}">
             <li>
                 <span>
                     <img src="/assets/grid.svg" alt="">
@@ -68,25 +73,31 @@
                 </a>
             </li>
             <li class="space"></li>
-            <li>
-                <span>
-                    <img src="/assets/signout.svg" alt="">
-                </span>
-                <a routerLink="/home">
-                    Sign out
-                </a>
-            </li>
         </ul>
         <ul class="menu-footer">
 
+
+
+
             <li>
-                <a routerLink="/login"
+
+
+
+                <a routerLink="/login" *ngIf="!isLoggedIn"
                    routerLinkActive="active"
                    class="btn_rounded_green">
                     Sign in
                 </a>
 
-                <a routerLink="/register"
+                <a routerLink="/home" (click)="logout()" *ngIf="isLoggedIn"
+                   class="btn_rounded_green btn_rounded_orange">
+                    Logout
+                </a>
+
+
+
+
+                <a routerLink="/register" *ngIf="!isLoggedIn"
                    routerLinkActive="active"
                    class="btn_rounded_green">
                     Register

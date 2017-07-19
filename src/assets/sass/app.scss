@@ -5,6 +5,7 @@
 }
 
 $green: #00E5A8;
+$orange: #F67C23;
 
 main {
   padding-top: 44px;
@@ -157,13 +158,18 @@ header .user_info h2 {
 }
 
 header .user_info p {
-  font-size: 12px;
-  color: #838383;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #999;
 }
 
 header nav ul.menu {
   margin: 0px;
   padding: 0px 30px 30px 30px;
+}
+
+header nav ul.menu.moveDown {
+  margin-top: 100px;
 }
 
 header ul.menu li {
@@ -197,6 +203,7 @@ header ul.menu-footer li a {
   display: inline-block;
   margin-left: 7px;
   text-decoration: none;
+  cursor: pointer;
   &:hover {
     color: $green;
   }
@@ -231,7 +238,34 @@ header ul.menu-footer {
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     }
   }
+  a.btn_rounded_orange {
+    background: $orange;
+  }
 
+}
+
+button.btn_rounded_orange {
+  background: $orange;
+  height: 44px;
+  border: none;
+  border-radius: 64px;
+  color: #fff;
+  padding: 0px 30px;
+  line-height: 44px;
+  display: block;
+  width: 280px;
+  transition: 0.1s ease;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+  margin: 15px auto;
+  &:hover {
+    background: #fff;
+    color: $green;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
 }
 
 #menu_icon,
@@ -265,6 +299,21 @@ header ul.menu-footer {
     text-align: center;
     display: block;
   }
+
+  span#qty {
+    display: block;
+    background: #ff523e;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 20px;
+    position: absolute;
+    font-size: 11px;
+    text-align: center;
+    line-height: 17px;
+    top: 3px;
+    right: 5px;
+  }
 }
 
 #menu_icon a {
@@ -288,6 +337,7 @@ header ul.menu-footer {
   }
 
   ul.product_list {
+    position: relative;
 
     div.row {
       margin: 0px -5px 0px -5px;
@@ -309,6 +359,8 @@ header ul.menu-footer {
         h4 {
           color: #444;
           margin: 0px 0px 5px 0px;
+          font-size: 14px;
+          font-weight: bold;
         }
         p {
           text-decoration: none;
@@ -326,9 +378,11 @@ header ul.menu-footer {
 
   }
 }
-.ov-link-small{
-  font-size:12px;
+
+.ov-link-small {
+  font-size: 12px;
 }
+
 .ov-form {
   padding: 0px 15px;
 
@@ -342,7 +396,7 @@ header ul.menu-footer {
 
     padding-left: 0px;
     background: #fff;
-    margin-top: 15px;
+    margin-top: 10px;
     font-size: 14px;
 
     &:focus {
@@ -358,7 +412,7 @@ header ul.menu-footer {
   }
   a {
     display: inline-block;
-    font-size:13px;
+    font-size: 13px;
   }
 
   button {
@@ -486,6 +540,66 @@ Menu component
   a.small_logo {
     margin: 30px 0px;
     display: block;
+  }
+}
+
+#product_component {
+  img {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    text-align: center;
+    margin: 5px 0px;
+  }
+
+  p {
+    font-size: 11px;
+    text-align: center;
+    padding: 5px 30px;
+  }
+
+  h2.price {
+    font-size: 24px;
+    margin: 15px 0px;
+    text-align: Center;
+  }
+
+  div.qty_selector {
+    text-align: center;
+    margin: 7px 0px;
+
+    a.btn_minus,
+    a.btn_plus {
+      width: 44px;
+      height: 44px;
+      display: inline-block;
+      background: $green;
+      color: #fff;
+      border-radius: 44px;
+      text-align: Center;
+      line-height: 27px;
+      font-size: 24px;
+    }
+
+    .form-control {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      border-radius: none;
+      text-align: Center;
+      font-size: 16px;
+      color: #000;
+      width: 60px;
+      height: 44px;
+      display: inline-block;
+      border: thin solid #d8d8d8;
+    }
+
   }
 }
 

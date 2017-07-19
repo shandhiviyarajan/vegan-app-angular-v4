@@ -3,16 +3,19 @@
     {
       "id": 1,
       "name": "Shan Dhiviyajan",
+      "email": "shan@cms.lk",
       "role": "Designer",
       "username": "shannboy",
-      "email": "shan@cms.lk",
-      "password": "123123"
+      "password": "abc@123",
+      "image": "user.jpg"
     },
     {
-      "username": "vipula.s",
-      "password": "abcabc",
+      "id": 2,
+      "name": "Vipula Anandapiya",
       "email": "vipual@cms.lk",
-      "id": 2
+      "role": "Tech Lead",
+      "username": "vipula.s",
+      "password": "abcabc"
     },
     {
       "username": "testuser",
@@ -21,59 +24,149 @@
       "id": 3
     },
     {
-      "username": "shehan",
-      "password": "123",
+      "id": 4,
+      "name": "Shehan Fenando",
       "email": "shehan@gmail.com",
-      "id": 4
+      "role": "Software Engineer",
+      "username": "shehan",
+      "password": "123123"
     }
   ],
   "menu": [
     {
       "id": 1,
-      "title": "Short eats"
+      "title": "Short Eats",
+      "image": "short_eats.png",
+      "created_at": "2017-07-18 13:59:02"
     },
     {
       "id": 2,
-      "title": "Short eats"
+      "title": "Break fast",
+      "image": "break_fast.png",
+      "created_at": "2017-07-18 13:59:02"
     },
     {
       "id": 3,
-      "title": "Short eats"
+      "title": "Lunch",
+      "image": "lunch.png",
+      "created_at": "2017-07-18 13:59:02"
     },
     {
       "id": 4,
-      "title": "Short eats"
+      "title": "Dinner",
+      "image": "dinner.png",
+      "created_at": "2017-07-18 13:59:02"
     },
     {
       "id": 5,
-      "title": "Short eats"
+      "title": "Desserts",
+      "image": "desserts.png",
+      "created_at": "2017-07-18 13:59:02"
     },
     {
       "id": 6,
-      "title": "Short eats"
+      "title": "Drinks",
+      "image": "drinks.png",
+      "created_at": "2017-07-18 13:59:02"
     }
   ],
   "product": [
     {
       "id": 1,
-      "menu_id": 1,
-      "title": "Product name",
-      "price": 300,
-      "image": "test.jpg"
-    },
-    {
-      "id": 3,
-      "menu_id": 2,
-      "title": "Product name",
-      "price": 370,
-      "image": "test.jpg"
+      "menu_id": "1",
+      "title": "Vegetable Roti",
+      "price": "100",
+      "image": "https://img.buzzfeed.com/buzzfeed-static/static/2014-01/enhanced/webdr07/27/11/enhanced-buzz-19322-1390840579-31.jpg",
+      "created_at": "2017-07-18 13:59:02"
     },
     {
       "id": 2,
-      "menu_id": 2,
-      "title": "Product name",
-      "price": 360,
-      "image": "test.jpg"
+      "menu_id": "1",
+      "title": "Samosa",
+      "price": "200",
+      "image": "https://img.buzzfeed.com/buzzfeed-static/static/2014-01/enhanced/webdr07/27/11/enhanced-buzz-19322-1390840579-31.jpg",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 3,
+      "menu_id": "2",
+      "title": "Jumbo Chickpea Pancake",
+      "price": "340",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2014-01\/enhanced\/webdr06\/27\/11\/enhanced-buzz-4179-1390841733-0.jpg",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 4,
+      "menu_id": "2",
+      "title": "Blueberry Oatmeal Waffles",
+      "price": "300",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2014-01\/enhanced\/webdr07\/27\/11\/enhanced-buzz-19322-1390840579-31.jpg",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 5,
+      "menu_id": "3",
+      "title": "Cheesy Corn, Potato, and Zucchini Galette",
+      "price": "230",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2017-07\/7\/11\/asset\/buzzfeed-prod-fastlane-02\/sub-buzz-28812-1499440622-11.jpg",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 6,
+      "menu_id": "3",
+      "title": "Three Cheese and Zucchini Galette",
+      "price": "450",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2017-07\/7\/10\/asset\/buzzfeed-prod-fastlane-03\/sub-buzz-6691-1499438588-5.jpg",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 7,
+      "menu_id": "4",
+      "title": "Mushroom Galette With Gruyere Crust",
+      "price": "230",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2017-07\/7\/11\/asset\/buzzfeed-prod-fastlane-02\/sub-buzz-29581-1499441787-13.jpg",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 8,
+      "menu_id": "4",
+      "title": "Heirloom Tomato and Eggplant Galette",
+      "price": "130",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2017-07\/7\/11\/asset\/buzzfeed-prod-fastlane-01\/sub-buzz-23129-1499442020-5.jpg",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 9,
+      "menu_id": "5",
+      "title": "Mixed Berry Galette With Buttermilk Crust",
+      "price": "280",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2017-07\/7\/11\/asset\/buzzfeed-prod-fastlane-03\/sub-buzz-9132-1499442255-22.png",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 10,
+      "menu_id": "5",
+      "title": "Blueberry and Apple Galette",
+      "price": "340",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2017-07\/7\/12\/asset\/buzzfeed-prod-fastlane-02\/sub-buzz-31216-1499445035-6.jpg",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 11,
+      "menu_id": "6",
+      "title": "Grill-Limonade",
+      "price": "250",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2017-06\/12\/16\/asset\/buzzfeed-prod-fastlane-01\/sub-buzz-6522-1497298875-1.jpg",
+      "created_at": "2017-07-18 13:59:02"
+    },
+    {
+      "id": 12,
+      "menu_id": "6",
+      "title": "Color-Changing Frozen Mojito",
+      "price": "480",
+      "image": "https:\/\/img.buzzfeed.com\/buzzfeed-static\/static\/2017-07\/10\/20\/asset\/buzzfeed-prod-fastlane-02\/sub-buzz-5570-1499733463-1.jpg",
+      "created_at": "2017-07-18 13:59:02"
     }
-  ]
+  ],
+  "cart": []
 }

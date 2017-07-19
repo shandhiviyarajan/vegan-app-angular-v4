@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../services/api.services";
 
 @Component({
@@ -6,20 +6,32 @@ import {ApiService} from "../../services/api.services";
     templateUrl: './menu.component.html',
     providers: [ApiService]
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
 
-    menu = [];
+    public menu: any;
 
-    constructor(private api_services: ApiService) {
+    constructor(private Api: ApiService) {
 
+    }
+
+    ngOnInit() {
         this.getAllMenu();
     }
-
     public getAllMenu() {
-        this.api_services.Menu()
+
+        this.Api.getMenu()
             .subscribe(
-                response => console.log(response),
-                error => console.log("Error")
-            );
+                success => {
+                    console.log(success);
+                    this.menu = success;
+                },
+
+                error => {
+                    console.log("Error");
+                }
+            )
+
     }
+
+
 }

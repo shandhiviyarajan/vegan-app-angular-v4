@@ -1,5 +1,5 @@
 import {Injectable, OnInit} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 // import 'rxjs/add/operator/toPromise';
 // import "rxjs/add/operator/catch";
@@ -12,19 +12,27 @@ export class ApiService implements OnInit {
 
     }
 
-  // private static API_ENDPOINT = "http://139.59.224.134/index.php/api";
-    private static API_ENDPOINT = "http://localhost:3000"
+    // private static API_ENDPOINT = "http://139.59.224.134/index.php/api";
+    private static API_ENDPOINT = "http://localhost:3000";
 
-    public Users(): Observable<any> {
-        return this.http.get(ApiService.API_ENDPOINT + "/user");
-    }
-    public Menu() {
+    public getMenu() {
         return this.http.get(ApiService.API_ENDPOINT + "/menu")
+            .map((response: Response) => response.json());
     }
-    public Product() {
-        
-        return this.http.get(ApiService.API_ENDPOINT + "/product");
 
+    public getMenuId(id:number) {
+        return this.http.get(ApiService.API_ENDPOINT + "/menu/"+id)
+            .map((response: Response) => response.json());
+    }
+
+    public getProductId(id: number) {
+        return this.http.get(ApiService.API_ENDPOINT + "/product/" + id)
+            .map((response: Response) => response.json());
+    }
+
+    public getProduct(id: number) {
+        return this.http.get(ApiService.API_ENDPOINT + "/product/?menu_id=" + id)
+            .map((response: Response) => response.json());
     }
 
 

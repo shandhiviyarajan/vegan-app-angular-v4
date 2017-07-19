@@ -6,7 +6,7 @@ import {SubMenuComponent} from "./_includes/sub_menu/submenu.component";
 import {HomeComponent} from "./components/home/home.component";
 import {MenuComponent} from "./components/menu/menu.component";
 import {SubmenuComponent} from "./components/submenu/submenu.component";
-import {FoodComponent} from "./components/food/food.component";
+import {ProductComponent} from "./components/product/product.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
@@ -36,12 +36,17 @@ const routes: Routes = [
     },
 
     {
-        path: 'menu/:food_name',
+        path: 'menu/:id',
         component: SubmenuComponent
     },
     {
         path: 'submenu',
         component: SubmenuComponent
+    },
+
+    {
+        path:'menu/product/:id',
+        component:ProductComponent
     },
     {
         path: 'cart',
@@ -62,7 +67,7 @@ const routes: Routes = [
     },
 
     {
-        path: 'settingsx',
+        path: 'settings',
         component: SettingsComponent
     },
     {
@@ -71,7 +76,7 @@ const routes: Routes = [
     }
 ];
 
-export const PageComponents = [HeaderComponent, FooterComponent, SubMenuComponent, HomeComponent, MenuComponent, SubmenuComponent, FoodComponent, CartComponent, LoginComponent, RegisterComponent, SettingsComponent, OrdersComponent, PageNotFoundComponent];
+export const PageComponents = [HeaderComponent, FooterComponent, SubMenuComponent, HomeComponent, MenuComponent, SubmenuComponent, CartComponent, LoginComponent, RegisterComponent, SettingsComponent, OrdersComponent, PageNotFoundComponent, ProductComponent];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

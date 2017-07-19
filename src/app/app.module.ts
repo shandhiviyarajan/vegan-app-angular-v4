@@ -1,12 +1,13 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from "@angular/platform-browser";
-import {HttpModule, JsonpModule} from "@angular/http";
-import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {OrderModule} from 'ngx-order-pipe';
+
 
 /*
  Application modules */
-import {AppRouterModule, PageComponents} from "./router.module";
+import {AppRouterModule, PageComponents} from "./app.router";
 /*
  Application Components */
 import {AppComponent} from "./app.component";
@@ -17,8 +18,8 @@ import {MenuDirective} from "./directives/menu.directive";
     imports: [
         BrowserModule,
         HttpModule,
-        JsonpModule,
         FormsModule,
+        ReactiveFormsModule,
         OrderModule,
         AppRouterModule
     ],

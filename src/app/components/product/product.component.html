@@ -1,0 +1,38 @@
+<section class="ov-component" id="product_component">
+
+    <h2>
+        <a routerLink="/menu">Menu</a> / <a [routerLink]="['/menu/'+product.menu_id]">{{menu_title}}</a>
+    </h2>
+
+    <img src="/assets/v_burger.jpg" alt="">
+
+    <h4>
+        {{product.title}}
+    </h4>
+    <p>
+        A veggie burger is a hamburger-style,
+        does not contain meat, but contain vegitable mixture.
+    </p>
+
+    <h2 class="price">
+        {{product.price}} LKR
+    </h2>
+
+    <div class="qty_selector">
+        <form
+                #productForm="ngForm"
+                (ngSubmit)="addToCart(productForm.value)">
+            <a class="btn btn_minus"> -</a>
+            <input type="text" class="form-control" [value]="1" required
+                   name="quantity"
+                   ngModel>
+            <a class="btn btn_plus"> +</a>
+            <div class="clearfix"></div>
+
+            <button type="submit" class="btn_rounded_orange">
+                Add to cart
+            </button>
+        </form>
+    </div>
+
+</section>

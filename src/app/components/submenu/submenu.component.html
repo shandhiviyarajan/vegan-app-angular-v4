@@ -1,34 +1,35 @@
 <section class="ov-component" id="submenu_component">
+
     <h2>
-        Menu / Short Eats
+        <a routerLink="/menu">Menu</a> / <a [routerLink]="['/menu/'+menu_id]">{{menu_title}}</a>
     </h2>
 
     <ul class="product_list">
-        <li *ngFor="let x of [0,1,2]">
-            <a routerLink="">
+        <li *ngFor="let product of products">
+            <a [routerLink]="['/menu/product/'+product.id]">
                 <div class="row">
                     <div class="col-xs-3">
                         <img src="/assets/v_burger.jpg" alt="">
                     </div>
                     <div class="col-xs-6">
                         <h4>
-                            Vegan Burger
+                            {{product.title}}
                         </h4>
                         <p class="product_desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit deserunt dolor dolores.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </p>
                     </div>
                     <div class="col-xs-3">
                         <p class="price">
                             <strong>
-                                300 LKR
+                                {{product.price}}
                             </strong>
                         </p>
                     </div>
                 </div>
             </a>
         </li>
-        
+
 
     </ul>
 </section>
