@@ -11,9 +11,12 @@ import {ApiService} from "../../services/api.services";
 })
 
 export class HomeComponent implements OnInit {
-    
+
     menu: Array<any> = [];
     show: boolean = false;
+
+    my_name: string = "Shan name";
+    user = 'test';
 
     constructor(private api_service: ApiService) {
 

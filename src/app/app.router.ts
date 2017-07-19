@@ -34,7 +34,6 @@ const routes: Routes = [
         path: 'menu',
         component: MenuComponent
     },
-
     {
         path: 'menu/:id',
         component: SubmenuComponent

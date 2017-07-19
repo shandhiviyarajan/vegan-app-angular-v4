@@ -3,7 +3,7 @@
          (click)="showHideMenu()">
         <a><img src="/assets/menu.svg" alt=""></a>
     </div>
-    <div id="cart_icon">
+    <div id="cart_icon" *ngIf="isLoggedIn">
         <span id="qty">
             0
         </span>
@@ -15,8 +15,8 @@
          [ngClass]="{'active':side_menu}">
         <div id="user_profile" *ngIf="user">
             <div class="user_image">
-                <img [src]="'/assets/'+user.image" alt="" *ngIf="user.image">
-                <img src="/assets/default.svg" alt="" *ngIf="!user.image">
+                <img *ngIf="user.username" [src]="'/assets/'+user.username+'.jpg'" alt="" >
+                <img src="/assets/default.svg" alt="" *ngIf="!user.username">
             </div>
             <div class="user_info">
                 <h2>

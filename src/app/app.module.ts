@@ -12,6 +12,7 @@ import {AppRouterModule, PageComponents} from "./app.router";
  Application Components */
 import {AppComponent} from "./app.component";
 import {MenuDirective} from "./directives/menu.directive";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({

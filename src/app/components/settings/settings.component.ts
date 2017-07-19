@@ -6,31 +6,31 @@ import {Router} from "@angular/router";
     selector: 'app-settings',
     providers: [AuthService],
     template: `
-    <section id="settings_component" class="ov-component">
-               <p>
-        &nbsp;
-    </p>
-    <a routerLink="/home" class="logo_small">
-        <img src="/assets/logo_small.svg" alt="">
-    </a>
-    <p>
-        &nbsp;
-    </p>
-            <form 
-             #updateForm="ngForm"
-              (ngSubmit)="update(updateForm.value)"
-             class="ov-form">
-            <input class="form-control" type="text" name="name" placeholder="Name" [(ngModel)]="name">
-            <input class="form-control" type="text" name="username" placeholder="Username" [(ngModel)]="username">
-            <input class="form-control" type="text" name="email" placeholder="Email Address" [(ngModel)]="email">    <input class="form-control" type="text" name="role" placeholder="Designation" [(ngModel)]="role">
-            <input class="form-control" type="password" name="password" placeholder="New Password" [(ngModel)]="password">
-            <input class="form-control" type="password" name="confirm" placeholder="Conform Password" [(ngModel)]="confirm">
-            <button>
-            Update Profile
-</button>
-</form>
-</section>
-`
+        <section id="settings_component" class="ov-component">
+            <p>
+                &nbsp;
+            </p>
+            <a routerLink="/home" class="logo_small">
+                <img src="/assets/logo_small.svg" alt="">
+            </a>
+            <p>
+                &nbsp;
+            </p>
+            <form
+                    #updateForm="ngForm"
+                    (ngSubmit)="update(updateForm.value)"
+                    class="ov-form">
+                <input class="form-control" type="text" name="name" placeholder="Name" [(ngModel)]="name">
+                <input class="form-control" type="text" name="username" placeholder="Username" [(ngModel)]="username">
+                <input class="form-control" type="text" name="email" placeholder="Email Address" [(ngModel)]="email"> <input class="form-control" type="text" name="role" placeholder="Designation" [(ngModel)]="role">
+                <input class="form-control" type="password" name="password" placeholder="New Password" [(ngModel)]="password">
+                <input class="form-control" type="password" name="confirm" placeholder="Conform Password" [(ngModel)]="confirm">
+                <button>
+                    Update Profile
+                </button>
+            </form>
+        </section>
+    `
 })
 
 export class SettingsComponent implements OnInit {
@@ -87,6 +87,8 @@ export class SettingsComponent implements OnInit {
                     this.email = success.email;
                     this.role = success.role;
                     this.password = success.password;
+
+                    this.router.navigate(['/home']);
                 }
             )
 

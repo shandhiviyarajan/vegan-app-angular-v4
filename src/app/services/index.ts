@@ -1,2 +1,2 @@
 export {AuthService} from "./auth.service";
-export {AlertService} from "./alert.service";
+export {CartService} from "./cart.service";

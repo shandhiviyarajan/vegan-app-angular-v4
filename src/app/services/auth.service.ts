@@ -6,12 +6,12 @@ export class AuthService {
     constructor(private request: Http, private router: Router) {
 
     }
-
+    private static API_ENDPOINT = "http://localhost:3000";
 
     //User Login
     login(credentials) {
 
-        return this.request.get("http://localhost:3000/user/?username=" + credentials.username + "&password=" + credentials.password)
+        return this.request.get(AuthService.API_ENDPOINT + "/user/?username=" + credentials.username + "&password=" + credentials.password)
             .map((response: Response) => response.json());
 
     }
@@ -39,25 +39,25 @@ export class AuthService {
     //User registration
     create(user) {
 
-        return this.request.post("http://localhost:3000/user/", user)
+        return this.request.post(AuthService.API_ENDPOINT + "/user/", user)
             .map((response: Response) => response.json());
     }
 
     //Get user by ID
     getUser(id: number) {
-        return this.request.get("http://localhost:3000/user/" + id)
+        return this.request.get(AuthService.API_ENDPOINT + "/user/" + id)
             .map((response: Response) => response.json());
     }
 
     //User Update
     update(user) {
-        return this.request.put("http://localhost:3000/user/" + user.id, user)
+        return this.request.put(AuthService.API_ENDPOINT + "/user/" + user.id, user)
             .map((response: Response) => response.json());
     }
 
     //Delete user
     delete(id: number) {
-        return this.request.delete("http://localhost:3000/user/" + id)
+        return this.request.delete(AuthService.API_ENDPOINT + "/user/" + id)
             .map((response: Response) => response.json());
     }
 

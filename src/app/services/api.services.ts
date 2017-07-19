@@ -12,13 +12,14 @@ export class ApiService implements OnInit {
 
     }
 
-    // private static API_ENDPOINT = "http://139.59.224.134/index.php/api";
+   // private static API_ENDPOINT = "http://139.59.224.134/index.php/api";
     private static API_ENDPOINT = "http://localhost:3000";
 
     public getMenu() {
         return this.http.get(ApiService.API_ENDPOINT + "/menu")
             .map((response: Response) => response.json());
     }
+
 
     public getMenuId(id:number) {
         return this.http.get(ApiService.API_ENDPOINT + "/menu/"+id)
@@ -34,6 +35,9 @@ export class ApiService implements OnInit {
         return this.http.get(ApiService.API_ENDPOINT + "/product/?menu_id=" + id)
             .map((response: Response) => response.json());
     }
+
+
+
 
 
     ngOnInit() {

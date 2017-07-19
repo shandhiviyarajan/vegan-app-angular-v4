@@ -24,6 +24,9 @@ export class HeaderComponent implements OnInit {
         this.isLoggedIn = AuthService.isAuth();
         if (localStorage.getItem("current_user") != null) {
             this.user = JSON.parse(localStorage.getItem("current_user"))[0];
+            this.Auth.getUser(this.user['id']).subscribe(
+                success => this.user = success
+        )
         } else {
             this.user = false;
         }

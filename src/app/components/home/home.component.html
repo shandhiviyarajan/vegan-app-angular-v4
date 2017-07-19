@@ -16,4 +16,24 @@
         </p>
     </div>
 
+    <section [ngSwitch]="user">
+        <div *ngSwitchCase="'shan'"><p style="color:#fff;">i love blue colour</p></div>
+        <div *ngSwitchCase="'vipula'">i love green colour</div>
+        <div *ngSwitchCase="'dinusha'">i love red colour</div>
+        <div *ngSwitchDefault><p style="color:#fff;">
+            We don't show colours
+        </p></div>
+    </section>
+
+
+
+        <input type="text" name="my_name"
+               [ngModel]="my_name"
+               #ctrl="ngModel">
+
+    <p style="color:#fff;">
+        {{my_name}}
+    </p>
+
+
 </section>

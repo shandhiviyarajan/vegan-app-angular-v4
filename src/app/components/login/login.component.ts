@@ -37,17 +37,16 @@ export class LoginComponent implements OnInit {
      */
 
     public login(form) {
-        console.log(form);
 
         this.Auth.login({
             "username": form.username,
             "password": form.password
         }).subscribe(
             success => {
-                alert("Login Success");
+                alert("Login Successful");
                 localStorage.setItem("current_user", JSON.stringify(success));
                 AuthService.isAuthenticated = true;
-                this.router.navigate(['/menu']);
+                this.router.navigate(['/home']);
 
             },
             error => {
