@@ -1,10 +1,10 @@
 {
-  "user": [
+  "users": [
     {
       "id": 1,
       "name": "Shan Dhiviyajan",
       "email": "shan@cms.lk",
-      "role": "Designer - full stack",
+      "role": "Designer ",
       "username": "shannboy",
       "password": "abc@123"
     },
@@ -37,6 +37,12 @@
       "role": "Developer - full stack",
       "username": "vipula",
       "password": "vipula"
+    },
+    {
+      "name": "Pramoda",
+      "username": "pramoda",
+      "email": "pramoda@gmail.com",
+      "id": 6
     }
   ],
   "menu": [

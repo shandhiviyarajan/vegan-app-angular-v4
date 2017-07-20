@@ -23,9 +23,9 @@
                 #productForm="ngForm"
                 (ngSubmit)="addToCart(productForm.value)">
             <a class="btn btn_minus"> -</a>
-            <input type="text" class="form-control" [value]="1" required
+            <input type="text" class="form-control" value="1" required
                    name="quantity"
-                   ngModel>
+                   [ngModel]="quantity">
             <a class="btn btn_plus"> +</a>
             <div class="clearfix"></div>
 

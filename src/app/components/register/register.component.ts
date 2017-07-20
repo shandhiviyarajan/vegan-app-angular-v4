@@ -1,3 +1,8 @@
+/**
+ * Register Component
+ * Author - Shan Dhiviyarajan <prashasoft@gmail.com>
+ */
+
 import {Component} from "@angular/core";
 import {AuthService} from "../../services";
 import {Router} from "@angular/router";
@@ -11,22 +16,21 @@ import {User} from "../../models/User";
 })
 
 export class RegisterComponent {
-    constructor(private Auth: AuthService, private router: Router) {
+
+    //Inject AuthService and Router
+    constructor(private Auth: AuthService,
+                private router: Router) {
 
     }
 
     username: string;
     password: string;
     email: string;
+    //Create a new user object using User Class /models/User.ts
     newUser = new User();
 
-    /**
-     * Create user
-     */
+    //Create new user
     public register(form) {
-
-        console.log(this.router);
-
         this.newUser.username = form.username;
         this.newUser.password = form.password;
         this.newUser.email = form.email;

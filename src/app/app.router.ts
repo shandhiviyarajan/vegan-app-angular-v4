@@ -1,3 +1,8 @@
+/**
+ * Application Router module
+ * Author - Shan Dhiviyarajan <prashasoft@gmail.com>
+ */
+
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {HeaderComponent} from "./_includes/header/header.component";
@@ -13,14 +18,19 @@ import {RegisterComponent} from "./components/register/register.component";
 import {SettingsComponent} from "./components/settings/settings.component";
 import {OrdersComponent} from "./components/orders/orders.component";
 import {PageNotFoundComponent} from "./components/404/404.component";
+import {FeedbackComponent} from "./components/feedback/feedback.component";
 
-
+//Application Routes
 const routes: Routes = [
 
     {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
+    },
+    {
+        path: 'feedback',
+        component: FeedbackComponent
     },
     {
         path: 'home',
@@ -44,8 +54,8 @@ const routes: Routes = [
     },
 
     {
-        path:'menu/product/:id',
-        component:ProductComponent
+        path: 'menu/product/:id',
+        component: ProductComponent
     },
     {
         path: 'cart',
@@ -71,17 +81,21 @@ const routes: Routes = [
     },
     {
         path: '**',
-        component:PageNotFoundComponent
+        component: PageNotFoundComponent
     }
 ];
 
-export const PageComponents = [HeaderComponent, FooterComponent, SubMenuComponent, HomeComponent, MenuComponent, SubmenuComponent, CartComponent, LoginComponent, RegisterComponent, SettingsComponent, OrdersComponent, PageNotFoundComponent, ProductComponent];
 
+//Exporting all my page components as a PageComponent constant
+export const PageComponents = [FeedbackComponent, HeaderComponent, FooterComponent, SubMenuComponent, HomeComponent, MenuComponent, SubmenuComponent, CartComponent, LoginComponent, RegisterComponent, SettingsComponent, OrdersComponent, PageNotFoundComponent, ProductComponent];
+
+//AppRouter NgModule
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
 
+//Exporting the AppRouterModule
 export class AppRouterModule {
 
 }

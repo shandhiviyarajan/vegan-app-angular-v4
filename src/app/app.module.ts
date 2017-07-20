@@ -1,8 +1,14 @@
+/**
+ * App Module
+ * Author - Shan Dhiviyarajan <prashasoft@gmail.com>
+ */
+
 import {NgModule} from '@angular/core';
 import {BrowserModule} from "@angular/platform-browser";
 import {HttpModule} from "@angular/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {OrderModule} from 'ngx-order-pipe';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";  //used to build forms
+
+import {OrderModule} from 'ngx-order-pipe'; //used to sort the [ngFor] results
 
 
 /*
@@ -12,24 +18,26 @@ import {AppRouterModule, PageComponents} from "./app.router";
  Application Components */
 import {AppComponent} from "./app.component";
 import {MenuDirective} from "./directives/menu.directive";
-import {RouterModule} from "@angular/router";
 
-
+//Boostrap your application
 @NgModule({
+
+    //Your imported modules
     imports: [
         BrowserModule,
         HttpModule,
         FormsModule,
         ReactiveFormsModule,
         OrderModule,
-        AppRouterModule
+        AppRouterModule //Your AppRouterModule   "app.router.ts"
     ],
+    //Your app components
     declarations: [
         AppComponent,
         PageComponents,
         MenuDirective
     ],
-
+    //Your app component to start
     bootstrap: [AppComponent]
 })
 export class AppModule {

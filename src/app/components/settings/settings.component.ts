@@ -1,10 +1,17 @@
+/**
+ * Settings Component
+ * Author - Shan Dhiviyarajan <prashasoft@gmail.com>
+ */
 import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
 import {User} from "../../models/User";
 import {Router} from "@angular/router";
+
+//Settings component
 @Component({
     selector: 'app-settings',
     providers: [AuthService],
+    //Created a inline form
     template: `
         <section id="settings_component" class="ov-component">
             <p>
@@ -34,11 +41,15 @@ import {Router} from "@angular/router";
 })
 
 export class SettingsComponent implements OnInit {
-    constructor(private Auth: AuthService, private router: Router) {
+
+    //Injecting the services
+    constructor(private Auth: AuthService,
+                private router: Router) {
 
     }
 
-    current_user = new User();
+    //Create a new user using User Class
+    public current_user = new User();
     id: number;
     name: string;
     username: string;
@@ -46,29 +57,32 @@ export class SettingsComponent implements OnInit {
     email: string;
     role: string;
     image: string;
+    public user_storage;
 
 
+    //Component life cycle hook runs right after your component loads.
     ngOnInit() {
 
         if (AuthService.isAuth()) {
-            var user_storage = JSON.parse(localStorage.getItem("current_user"));
-            this.id = user_storage[0].id;
-            this.name = user_storage[0].name;
-            this.username = user_storage[0].username;
-            this.password = user_storage[0].password;
-            this.role = user_storage[0].role;
-            this.email = user_storage[0].email;
-            this.image = user_storage[0].image;
+            this.user_storage = JSON.parse(localStorage.getItem("current_user"));
+            this.id = this.user_storage[0].id;
+            this.name = this.user_storage[0].name;
+            this.username = this.user_storage[0].username;
+            this.password = this.user_storage[0].password;
+            this.role = this.user_storage[0].role;
+            this.email = this.user_storage[0].email;
+            this.image = this.user_storage[0].image;
 
 
         } else {
+            //Redirect the route to login
             this.router.navigate(['/login']);
         }
 
 
     }
 
-
+    //Profile update function
     update = function (form) {
         this.current_user.id = this.id;
         this.current_user.name = this.name;
@@ -80,7 +94,7 @@ export class SettingsComponent implements OnInit {
         this.Auth.update(this.current_user)
             .subscribe(
                 success => {
-                    alert("User updated");
+                    alert("Profile information updated");
                     this.id = success.id;
                     this.name = success.name;
                     this.username = success.username;
@@ -88,6 +102,7 @@ export class SettingsComponent implements OnInit {
                     this.role = success.role;
                     this.password = success.password;
 
+                    //Redirect to home
                     this.router.navigate(['/home']);
                 }
             )

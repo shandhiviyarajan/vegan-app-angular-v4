@@ -1,30 +1,40 @@
+/**
+ * Login Component
+ * Author - Shan Dhiviyarajan <prashasoft@gmail.com>
+ */
 import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {FormGroup, FormControl} from "@angular/forms";
+import {UserService} from "../../services/user.service";
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
-    providers: [AuthService]
+    styleUrls: ['./login.component.css'],//can have a dedicated style file.
+    providers: [AuthService, UserService] //Including the services annotation
 })
-
+//Exporting the login component
 export class LoginComponent implements OnInit {
-    constructor(private Auth: AuthService, private router: Router) {
 
-
+    //Injecting the services
+    constructor(private UserService: UserService,
+                private Auth: AuthService,
+                private router: Router) {
     }
 
 
-    login_form;
+    public login_form;
 
+    //Angular Lifecycle hook
     ngOnInit() {
 
+        //Login form constructor
         this.login_form = new FormGroup({
             username: new FormControl(),
             password: new FormControl()
         });
 
-
+        //Check if logged in
         if (AuthService.isAuth()) {
             this.router.navigate(['/settings']);
         }
@@ -32,9 +42,7 @@ export class LoginComponent implements OnInit {
 
     }
 
-    /**
-     * Login user
-     */
+//User login
 
     public login(form) {
 
@@ -56,9 +64,17 @@ export class LoginComponent implements OnInit {
 
     }
 
+//User logout
     public loginOut() {
         AuthService.isAuthenticated = false;
         localStorage.removeItem("current_user");
+    }
+
+    public demoLogin() {
+        this.UserService.login("test_user").subscribe(
+            success => alert("Hello"),
+            error => alert("User not found")
+        );
     }
 
 

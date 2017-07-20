@@ -1,3 +1,8 @@
+/**
+ * App Component
+ * Author - Shan Dhiviyarajan <prashasoft@gmail.com>
+ */
+
 import {Component, OnInit} from '@angular/core';
 import {Title} from "@angular/platform-browser";
 import {Router} from "@angular/router";
@@ -9,13 +14,22 @@ import {AuthService} from "./services/auth.service";
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    providers: [AuthService]
+    providers: [AuthService]  //AuthService annotation
 })
+
+//export AppComponent class
 export class AppComponent implements OnInit {
-    constructor(private router: Router, private titleService: Title, private Auth: AuthService) {
+
+    //Dependency injection - injecting the services
+    constructor(private router: Router,
+                private titleService: Title,
+                private Auth: AuthService) {
     }
+
+
+    //Component life cycle hook
     ngOnInit() {
-        this.titleService.setTitle('My awesome app');
+        this.titleService.setTitle('Sample Angular4 Applicaiton');
         AuthService.isAuth();
     }
 }
