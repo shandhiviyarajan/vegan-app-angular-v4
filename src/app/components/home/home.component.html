@@ -3,8 +3,9 @@
         <img src="/assets/logo.svg" alt="">
     </div>
 
-    <button class="btn btn_black" routerLink="/login">Sign in to order</button>
-    <p class="or">
+    <button *ngIf="!isLoggedIn" class="btn btn_black"
+            routerLink="/login">Sign in to order</button>
+    <p  *ngIf="!isLoggedIn" class="or">
         or
     </p>
     <button class="btn btn_black" routerLink="/menu">Check the food menu</button>

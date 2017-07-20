@@ -3,7 +3,7 @@
  * Author - Shan Dhiviyarajan <prashasoft@gmail.com>
  */
 import {Component, OnInit} from "@angular/core";
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from "../../services/";
 import {Router} from "@angular/router";
 import {FormGroup, FormControl} from "@angular/forms";
 import {UserService} from "../../services/user.service";
@@ -43,15 +43,15 @@ export class LoginComponent implements OnInit {
     }
 
 //User login
-
     public login(form) {
-
+        //call Auth login method
         this.Auth.login({
             "username": form.username,
             "password": form.password
         }).subscribe(
             success => {
                 alert("Login Successful");
+                //Store the user object to the localStorage;
                 localStorage.setItem("current_user", JSON.stringify(success));
                 AuthService.isAuthenticated = true;
                 this.router.navigate(['/home']);

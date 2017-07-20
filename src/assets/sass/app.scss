@@ -284,10 +284,18 @@ button.btn_rounded_orange {
   -ms-transition: opacity 0.1s ease;
   -o-transition: opacity 0.1s ease;
   transition: opacity 0.1s ease;
-
   &:hover {
     opacity: .85;
   }
+}
+
+#menu_icon {
+  background: url("../menu.svg") center center no-repeat;
+  top: 0px;
+}
+
+#menu_icon.active {
+  background: url("../close.svg") center center no-repeat;
 }
 
 #cart_icon {
@@ -610,7 +618,5 @@ Menu component
   text-align: center;
   padding-top: 100px;
 }
-
-
 
 

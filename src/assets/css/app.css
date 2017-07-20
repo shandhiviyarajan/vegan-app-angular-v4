@@ -232,6 +232,13 @@ button.btn_rounded_orange {
   #cart_icon:hover {
     opacity: .85; }
 
+#menu_icon {
+  background: url("../menu.svg") center center no-repeat;
+  top: 0px; }
+
+#menu_icon.active {
+  background: url("../close.svg") center center no-repeat; }
+
 #cart_icon {
   left: auto;
   right: 0px; }

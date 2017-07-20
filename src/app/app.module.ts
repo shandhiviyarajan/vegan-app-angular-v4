@@ -19,7 +19,7 @@ import {AppRouterModule, PageComponents} from "./app.router";
 import {AppComponent} from "./app.component";
 import {MenuDirective} from "./directives/menu.directive";
 
-//Boostrap your application
+//Bootstrap your application
 @NgModule({
 
     //Your imported modules

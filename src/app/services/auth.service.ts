@@ -5,7 +5,7 @@
 import {Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import {Router} from "@angular/router";
-import {ApiService} from "./api.services"; // importing my ApiService to access my API_ENDPOINT eg : ApiService.API_ENDPOINT
+import {ApiService} from "./api.service"; // importing my ApiService to access my API_ENDPOINT eg : ApiService.API_ENDPOINT
 @Injectable()
 export class AuthService {
     //Injecting the HTTP service
@@ -16,7 +16,7 @@ export class AuthService {
     //User Login
     login(credentials) {
         //For login we use POST for Demo purpose i use GET here (fake db)
-        return this.request.get(ApiService.API_ENDPOINT + "/user/?username=" + credentials.username + "&password=" + credentials.password)
+        return this.request.get(ApiService.API_ENDPOINT + "/users/?username=" + credentials.username + "&password=" + credentials.password)
             .map((response: Response) => response.json());
 
     }
@@ -31,7 +31,6 @@ export class AuthService {
         } else {
             AuthService.isAuthenticated = false;
         }
-        console.log("isAuth = " + AuthService.isAuthenticated);
         return AuthService.isAuthenticated;
     }
 

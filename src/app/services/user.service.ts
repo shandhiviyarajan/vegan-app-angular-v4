@@ -6,7 +6,7 @@
 import {Injectable} from "@angular/core";
 import construct = Reflect.construct;
 import {Http} from "@angular/http";
-import {ApiService} from "./api.services";
+import {ApiService} from "./api.service";
 
 //Create an injectable service
 @Injectable()

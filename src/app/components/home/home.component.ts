@@ -4,7 +4,7 @@
  */
 
 import {Component, OnInit} from "@angular/core";
-import {ApiService} from "../../services/api.services";
+import {ApiService,AuthService} from "../../services/";
 
 
 @Component({
@@ -19,12 +19,14 @@ export class HomeComponent implements OnInit {
 
     menu: Array<any> = [];
     show: boolean = false;
+    isLoggedIn = false;
 
-    constructor(private api_service: ApiService) {
+    constructor(private ApiService: ApiService) {
 
     }
 
     ngOnInit() {
         console.log("Home Component");
+        this.isLoggedIn = AuthService.isAuth();
     }
 }

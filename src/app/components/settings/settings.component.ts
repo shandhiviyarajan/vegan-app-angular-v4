@@ -3,7 +3,7 @@
  * Author - Shan Dhiviyarajan <prashasoft@gmail.com>
  */
 import {Component, OnInit} from "@angular/core";
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from "../../services/";
 import {User} from "../../models/User";
 import {Router} from "@angular/router";
 

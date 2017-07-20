@@ -8,12 +8,11 @@ import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 
 //import app services
-import {ApiService} from "../../services/api.services";
-import {AuthService} from "../../services/auth.service";
+import {ApiService, AuthService, CartService} from "../../services/";
 @Component({
     selector: 'app-product',
     templateUrl: './product.component.html',
-    providers: [ApiService]
+    providers: [ApiService, CartService]
 })
 export class ProductComponent implements OnInit {
 
@@ -22,28 +21,34 @@ export class ProductComponent implements OnInit {
     public product: any = [];
     public menu_title: string;
     public quantity = 1;
+    public cart_item = {};
+    public cart = [];
 
-
-    constructor(private router: Router, private ActivatedRoute: ActivatedRoute, private Api: ApiService) {
+    //Inject services
+    constructor(private router: Router,
+                private ActivatedRoute: ActivatedRoute,
+                private ApiService: ApiService,
+                private CartService: CartService) {
 
     }
 
+    //Component life cycle hook
     ngOnInit() {
-
+        //Get the product id from route using ActivatedRoute
         this.product_id = this.ActivatedRoute.snapshot.params['id'];
-
-        this.Api.getProductId(this.product_id)
+        //Get the product id
+        this.ApiService.getProductId(this.product_id)
             .subscribe(
                 success => {
                     this.product = success;
 
-                    this.Api.getMenuId(this.product.menu_id)
+                    //Get the menu id
+                    this.ApiService.getMenuId(this.product.menu_id)
                         .subscribe(
                             success => {
                                 this.menu_title = success.title
                             }
                         )
-
                 },
                 error => console.log("error")
             );
@@ -58,12 +63,24 @@ export class ProductComponent implements OnInit {
         //Check if user logged in
         if (AuthService.isAuth()) {
 
-            JSON.parse(localStorage.getItem('current_user'))['id'];
-            console.log(JSON.parse(localStorage.getItem('current_user'))['id']);
-            console.log(this.product_id);
-            console.log(this.product.menu_id);
-            console.log(form.value);
+            //make a cart object
+            this.cart_item = {
+                "user_id": JSON.parse(localStorage.getItem('current_user'))[0].id,
+                "product_id": this.product_id,
+                "quantity": form.quantity,
+                "menu_id": this.product.menu_id
+            };
 
+
+            //Add to cart using cart service
+            this.CartService.addToCart(this.cart_item)
+                .subscribe(
+                    success => {
+                        alert("Your product added !");
+                        this.router.navigate(['/cart']);
+                    },
+                    error => alert("Error adding product")
+                )
         } else {
 
             //Redirect user to login page
@@ -72,4 +89,5 @@ export class ProductComponent implements OnInit {
         }
 
     }
+    
 }

@@ -3,7 +3,7 @@
  * Author Shan Dhiviyarajan <prashasoft@gmail.com>
  */
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from "../../services/api.services";
+import {ApiService} from "../../services/";
 //Create menu component
 @Component({
     selector: 'app-menu',

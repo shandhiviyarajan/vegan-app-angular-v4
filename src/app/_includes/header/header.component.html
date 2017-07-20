@@ -1,7 +1,7 @@
 <header>
     <div id="menu_icon"
-         (click)="showHideMenu()">
-        <a><img src="/assets/menu.svg" alt=""></a>
+         (click)="showHideMenu()"
+         [ngClass]="{'active':side_menu}">
     </div>
     <div id="cart_icon" *ngIf="isLoggedIn">
         <span id="qty">

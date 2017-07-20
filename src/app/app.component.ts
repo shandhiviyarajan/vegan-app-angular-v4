@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-import {AuthService} from "./services/auth.service";
+import {AuthService} from "./services/";
 
 @Component({
     selector: 'app-root',
