@@ -24,7 +24,7 @@ export class AuthService {
     //Create authenticated variable
     public static isAuthenticated: boolean = false;
 
-    //Check is use authenticated
+    //Check is user authenticated
     public static isAuth() {
         if (localStorage.getItem("current_user") != null && localStorage.getItem("current_user")['id'] != "undefined") {
             AuthService.isAuthenticated = true;

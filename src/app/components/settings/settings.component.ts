@@ -85,11 +85,11 @@ export class SettingsComponent implements OnInit {
     //Profile update function
     update = function (form) {
         this.current_user.id = this.id;
-        this.current_user.name = this.name;
-        this.current_user.email = this.email;
-        this.current_user.role = this.role;
-        this.current_user.username = this.username;
-        this.current_user.password = this.password;
+        this.current_user.name = form.name;
+        this.current_user.email = form.email;
+        this.current_user.role = form.role;
+        this.current_user.username = form.username;
+        this.current_user.password = form.password;
 
         this.Auth.update(this.current_user)
             .subscribe(
