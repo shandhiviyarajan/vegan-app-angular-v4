@@ -31,5 +31,3 @@ Shan - <prashasoft@gmail.com>
 Vipula - <v.s.anandapiya@gmail.com >
 
 Keep in touch -https://www.meetup.com/Colombo-Laravel-Meetup/
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
