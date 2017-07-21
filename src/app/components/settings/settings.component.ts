@@ -57,7 +57,7 @@ export class SettingsComponent implements OnInit {
     email: string;
     role: string;
     image: string;
-    public user_storage;
+    public user_storage:any;
 
 
     //Component life cycle hook runs right after your component loads.
@@ -65,13 +65,13 @@ export class SettingsComponent implements OnInit {
 
         if (AuthService.isAuth()) {
             this.user_storage = JSON.parse(localStorage.getItem("current_user"));
-            this.id = this.user_storage[0].id;
-            this.name = this.user_storage[0].name;
-            this.username = this.user_storage[0].username;
-            this.password = this.user_storage[0].password;
-            this.role = this.user_storage[0].role;
-            this.email = this.user_storage[0].email;
-            this.image = this.user_storage[0].image;
+            this.id = this.user_storage.id;
+            this.name = this.user_storage.name;
+            this.username = this.user_storage.username;
+            this.password = this.user_storage.password;
+            this.role = this.user_storage.role;
+            this.email = this.user_storage.email;
+            this.image = this.user_storage.image;
 
 
         } else {
@@ -83,13 +83,15 @@ export class SettingsComponent implements OnInit {
     }
 
     //Profile update function
-    update = function (form) {
+    update(form) {
         this.current_user.id = this.id;
         this.current_user.name = form.name;
         this.current_user.email = form.email;
         this.current_user.role = form.role;
         this.current_user.username = form.username;
         this.current_user.password = form.password;
+        console.log(this.current_user);
+        localStorage.setItem("current_user", JSON.stringify(this.current_user));
 
         this.Auth.update(this.current_user)
             .subscribe(

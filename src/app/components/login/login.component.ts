@@ -3,10 +3,10 @@
  * Author - Shan Dhiviyarajan <prashasoft@gmail.com>
  */
 import {Component, OnInit} from "@angular/core";
-import {AuthService} from "../../services/";
-import {Router} from "@angular/router";
 import {FormGroup, FormControl} from "@angular/forms";
-import {UserService} from "../../services/user.service";
+import {Router} from "@angular/router";
+import {AuthService, UserService} from "../../services/";
+import {User} from "../../models/User";
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
 
 
     public login_form;
+
+    public logged_user = new User();
 
     //Angular Lifecycle hook
     ngOnInit() {
@@ -52,7 +54,15 @@ export class LoginComponent implements OnInit {
             success => {
                 alert("Login Successful");
                 //Store the user object to the localStorage;
-                localStorage.setItem("current_user", JSON.stringify(success));
+
+                this.logged_user.id = success[0].id;
+                this.logged_user.name = success[0].name;
+                this.logged_user.email = success[0].email;
+                this.logged_user.role = success[0].role;
+                this.logged_user.username = success[0].username;
+                this.logged_user.password = success[0].password;
+
+                localStorage.setItem("current_user", JSON.stringify(this.logged_user));
                 AuthService.isAuthenticated = true;
                 this.router.navigate(['/home']);
 
@@ -70,6 +80,8 @@ export class LoginComponent implements OnInit {
         localStorage.removeItem("current_user");
     }
 
+
+    //Demo login
     public demoLogin() {
         this.UserService.login("test_user").subscribe(
             success => alert("Hello"),

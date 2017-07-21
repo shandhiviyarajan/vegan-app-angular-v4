@@ -15,8 +15,7 @@ export class HeaderComponent implements OnInit {
 
     public isLoggedIn = false;
     public side_menu: boolean = false;
-    public user = false;
-
+    public user: any;
 
 
     ngOnInit() {
@@ -26,10 +25,13 @@ export class HeaderComponent implements OnInit {
 
     public getUserInfo() {
         this.isLoggedIn = AuthService.isAuth();
-        if (localStorage.getItem("current_user") != null) {
-            this.user = JSON.parse(localStorage.getItem("current_user"))[0];
-            this.Auth.getUser(this.user['id']).subscribe(
-                success => this.user = success
+        if (AuthService.isAuth()) {
+            this.user = JSON.parse(localStorage.getItem("current_user"));
+            this.Auth.getUser(this.user.id).subscribe(
+                success => {
+                    this.user = success;
+                    console.log(this.user);
+                }
             )
         } else {
             this.user = false;

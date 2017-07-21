@@ -3,3 +3,4 @@
 export {ApiService} from "./api.service";
 export {AuthService} from "./auth.service";
 export {CartService} from "./cart.service";
+export {UserService} from "./user.service";
