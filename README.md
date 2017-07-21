@@ -10,7 +10,9 @@ Install node js https://nodejs.org/en/
 
 Install json-server `npm install json-server -g`
 
-then `npm install` to install node_modules
+Install node_modules `npm install` 
+Install sass (optional) `gem install sass`
+
 
 
 ## Run the App
