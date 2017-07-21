@@ -11,6 +11,7 @@ Install node js https://nodejs.org/en/
 Install json-server `npm install json-server -g`
 
 Install node_modules `npm install` 
+
 Install sass (optional) `gem install sass`
 
 
@@ -30,6 +31,7 @@ You can also use `ng generate directive/pipe/service/class/module`. or `ng g c y
 
 Please talk to Shan or Vipula
 Shan - <prashasoft@gmail.com>
+
 Vipula - <v.s.anandapiya@gmail.com >
 
 Keep in touch -https://www.meetup.com/Colombo-Laravel-Meetup/
