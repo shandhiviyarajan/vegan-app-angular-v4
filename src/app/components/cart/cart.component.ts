@@ -31,12 +31,17 @@ export class CartComponent implements OnInit {
 
     //Component life cycle hook
     ngOnInit() {
+        this.getCartItems();
+    }
 
+    public getCartItems() {
 
         //Check user logged in or not
         if (AuthService.isAuth()) {
             //Get the user ID from localStorage
             this.user_id = JSON.parse(localStorage.getItem('current_user'))[0].id;
+
+            //Get cart items
             this.CartService.showCart(this.user_id)
                 .subscribe(
                     success => {
@@ -57,5 +62,18 @@ export class CartComponent implements OnInit {
             //redirect to login page
             this.router.navigate(['/login']);
         }
+
+    }
+
+    //Remove item from the cart
+    public removeCartItem(cart_id) {
+        this.CartService.removeItem(cart_id)
+            .subscribe(
+                success => {
+                    alert("Product removed from the cart");
+                    this.getCartItems();
+                }
+            ),
+            error => alert("Error removing item");
     }
 }

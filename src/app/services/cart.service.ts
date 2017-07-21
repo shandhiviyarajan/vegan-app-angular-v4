@@ -31,4 +31,11 @@ export class CartService {
             .map((response: Response) => response.json());
 
     }
+
+    //Remove item from the cart
+
+    public removeItem(id:number){
+        return this.http.delete(ApiService.API_ENDPOINT + "/cart/" + id)
+            .map((response: Response) => response.json());
+    }
 }

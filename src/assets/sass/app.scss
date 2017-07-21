@@ -637,6 +637,12 @@ Menu component
     height: 300px;
     overflow-x: hidden;
     overflow-y: scroll;
+
+    .btn {
+      font-size: 10px;
+      background: #ff3f2b;
+      
+    }
   }
 }
 
