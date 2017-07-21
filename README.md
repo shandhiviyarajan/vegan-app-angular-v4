@@ -5,6 +5,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 ## Install node_modules
 Install node js https://nodejs.org/en/
+Install json-server `npm install json-server -g`
 then `npm install` to install node_modules
 
 
