@@ -1,5 +1,37 @@
 <section class="ov-component" id="cart_component">
     <h2>
-        Your cart
+        <a routerLink="/menu">Menu</a> / <a [routerLink]="['/menu/'+menu_id]">{{menu_title}}</a>
     </h2>
+    <!-- show this list if only cart items are available-->
+    <ul class="product_list" *ngIf="!no_cart_items">
+        <li *ngFor="let cart_item of cart_items">
+            <a [routerLink]="['/menu/product/'+product.id]">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <img src="/assets/v_burger.jpg" alt="">
+                    </div>
+                    <div class="col-xs-6">
+                        <h4>
+                            {{product.title}}
+                        </h4>
+                        <p class="product_desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p class="price">
+                            <strong>
+                                {{product.price}}
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <h5 class="text-center">
+        No cart items found
+    </h5>
+    <button class="btn btn_black" routerLink="/menu">Check the food menu</button>
 </section>

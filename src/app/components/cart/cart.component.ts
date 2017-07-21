@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
 
     public user_id: number;
     public product_id: number;
-    public cart_items: Array<any> = [];
+    public cart_items: Array<any> = [];  //any type of array
     public no_cart_items: boolean = false;
 
 
@@ -52,9 +52,12 @@ export class CartComponent implements OnInit {
 
                             this.ApiService.getProductId(this.product_id)
                                 .subscribe(
-                                        success=> {
-                                            
-                                        }
+                                    success => {
+                                        console.log(success);
+                                    },
+                                    error => {
+                                        alert("No products found !");
+                                    }
                                 );
 
                         }
