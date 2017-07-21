@@ -28,5 +28,8 @@ You can also use `ng generate directive/pipe/service/class/module`. or `ng g c y
 
 Please talk to Shan or Vipula
 Shan - <prashasoft@gmail.com>
+Vipula - <v.s.anandapiya@gmail.com >
+
+Keep in touch -https://www.meetup.com/Colombo-Laravel-Meetup/
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
