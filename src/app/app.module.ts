@@ -18,6 +18,7 @@ import {AppRouterModule, PageComponents} from "./app.router";
  Application Components */
 import {AppComponent} from "./app.component";
 import {MenuDirective} from "./directives/menu.directive";
+import { JokeComponent } from './joke/joke.component';
 
 //Bootstrap your application
 @NgModule({
@@ -35,7 +36,8 @@ import {MenuDirective} from "./directives/menu.directive";
     declarations: [
         AppComponent,
         PageComponents,
-        MenuDirective
+        MenuDirective,
+        JokeComponent
     ],
     //Your app component to start
     bootstrap: [AppComponent]

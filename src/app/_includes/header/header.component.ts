@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
     public side_menu: boolean = false;
     public user = false;
 
-    public cart_count = CartService.CART_COUNT;
+
 
     ngOnInit() {
         this.getUserInfo();
@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
     public showHideMenu() {
         this.side_menu = (this.side_menu) ? false : true;
         this.isLoggedIn = AuthService.isAuth();
-        this.cart_count = CartService.CART_COUNT;
+
         this.getUserInfo();
     }
 
