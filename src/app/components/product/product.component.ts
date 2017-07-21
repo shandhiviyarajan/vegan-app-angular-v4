@@ -66,7 +66,7 @@ export class ProductComponent implements OnInit {
             //make a cart object
             this.cart_item = {
                 "user_id": JSON.parse(localStorage.getItem('current_user'))[0].id,
-                "product_id": this.product_id,
+                "product": this.product,
                 "quantity": form.quantity,
                 "menu_id": this.product.menu_id
             };

@@ -1,10 +1,11 @@
 import {Component, OnInit} from "@angular/core";
-import {AuthService} from "../../services/";
+import {AuthService, CartService} from "../../services/";
 import {Router} from "@angular/router";
+
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
-    providers: [AuthService]
+    providers: [AuthService, CartService]
 })
 
 export class HeaderComponent implements OnInit {
@@ -16,8 +17,11 @@ export class HeaderComponent implements OnInit {
     public side_menu: boolean = false;
     public user = false;
 
+    public cart_count = CartService.CART_COUNT;
+
     ngOnInit() {
         this.getUserInfo();
+        this.cart_count = CartService.CART_COUNT;
     }
 
     public getUserInfo() {
@@ -26,7 +30,7 @@ export class HeaderComponent implements OnInit {
             this.user = JSON.parse(localStorage.getItem("current_user"))[0];
             this.Auth.getUser(this.user['id']).subscribe(
                 success => this.user = success
-        )
+            )
         } else {
             this.user = false;
         }
@@ -36,6 +40,7 @@ export class HeaderComponent implements OnInit {
     public showHideMenu() {
         this.side_menu = (this.side_menu) ? false : true;
         this.isLoggedIn = AuthService.isAuth();
+        this.cart_count = CartService.CART_COUNT;
         this.getUserInfo();
     }
 

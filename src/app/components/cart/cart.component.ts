@@ -40,25 +40,14 @@ export class CartComponent implements OnInit {
             this.CartService.showCart(this.user_id)
                 .subscribe(
                     success => {
-                        console.log(success);
-                        //Check if have cart items 
+                        //Check if have cart items
+
                         if (success.length == 0) {
                             alert("No items found !");
                             this.no_cart_items = true;
                         } else {
-                            //Get product information
-
-                            this.product_id = success.product_id;
-
-                            this.ApiService.getProductId(this.product_id)
-                                .subscribe(
-                                    success => {
-                                        console.log(success);
-                                    },
-                                    error => {
-                                        alert("No products found !");
-                                    }
-                                );
+                            CartService.CART_COUNT = success.length;
+                            this.cart_items = success;
 
                         }
                     },

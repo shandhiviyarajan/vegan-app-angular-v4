@@ -4,9 +4,6 @@
          [ngClass]="{'active':side_menu}">
     </div>
     <div id="cart_icon" *ngIf="isLoggedIn">
-        <span id="qty">
-            0
-        </span>
         <a routerLink="/cart">
             <img src="/assets/cart_white.svg" alt=""></a>
     </div>
@@ -15,7 +12,7 @@
          [ngClass]="{'active':side_menu}">
         <div id="user_profile" *ngIf="user">
             <div class="user_image">
-                <img *ngIf="user.username" [src]="'/assets/'+user.username+'.jpg'" alt="" >
+                <img *ngIf="user.username" [src]="'/assets/'+user.username+'.jpg'" alt="">
                 <img src="/assets/default.svg" alt="" *ngIf="!user.username">
             </div>
             <div class="user_info">
@@ -31,6 +28,9 @@
             <div class="clearfix"></div>
         </div>
         <ul class="menu" [ngClass]="{'moveDown':!user}">
+            <li *ngIf="isLoggedIn">
+                <span></span><a routerLink="/home">Home</a>
+            </li>
             <li>
                 <span>
                     <img src="/assets/grid.svg" alt="">
@@ -77,10 +77,7 @@
         <ul class="menu-footer">
 
 
-
-
             <li>
-
 
 
                 <a routerLink="/login" *ngIf="!isLoggedIn"
@@ -93,8 +90,6 @@
                    class="btn_rounded_green btn_rounded_orange">
                     Logout
                 </a>
-
-
 
 
                 <a routerLink="/register" *ngIf="!isLoggedIn"

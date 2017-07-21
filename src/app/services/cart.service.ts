@@ -12,19 +12,23 @@ import {ApiService} from "./api.service"; // importing my ApiService to access m
 
 //Export class cart services
 export class CartService {
-    constructor(private http: Http) {}
+    constructor(private http: Http) {
+    }
+
+    public static CART_COUNT: number = 0;
 
     //Add to cart
     public addToCart(cart) {
-        
+        console.log(cart);
+
         return this.http.post(ApiService.API_ENDPOINT + "/cart/", cart)
             .map((response: Response) => response.json());
     }
 
 
     //Show cart // user session not handled
-    public showCart(user_id:number){
-        return this.http.get(ApiService.API_ENDPOINT + "/cart/" + user_id)
+    public showCart(user_id) {
+        return this.http.get(ApiService.API_ENDPOINT + "/cart/?user_id=" + user_id)
             .map((response: Response) => response.json());
 
     }

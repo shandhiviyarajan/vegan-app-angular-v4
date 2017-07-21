@@ -190,7 +190,7 @@ header ul.menu-footer {
   header ul.menu-footer a.btn_rounded_orange {
     background: #F67C23; }
 
-button.btn_rounded_orange {
+button.btn_rounded_orange, button.btn_rounded_green {
   background: #F67C23;
   height: 44px;
   border: none;
@@ -205,7 +205,16 @@ button.btn_rounded_orange {
   -moz-box-shadow: 0px 0px 5px transparent;
   box-shadow: 0px 0px 5px transparent;
   margin: 15px auto; }
-  button.btn_rounded_orange:hover {
+  button.btn_rounded_orange:hover, button.btn_rounded_green:hover {
+    background: #fff;
+    color: #00E5A8;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); }
+
+button.btn_rounded_green {
+  background: #00E5A8; }
+  button.btn_rounded_green:hover {
     background: #fff;
     color: #00E5A8;
     -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
@@ -477,5 +486,10 @@ Menu component
   height: 100%;
   text-align: center;
   padding-top: 100px; }
+
+#cart_component .product_list {
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll; }
 
 /*# sourceMappingURL=app.css.map */

@@ -268,6 +268,18 @@ button.btn_rounded_orange {
   }
 }
 
+button.btn_rounded_green {
+  @extend .btn_rounded_orange;
+  background: $green;
+  &:hover {
+    background: #fff;
+    color: $green;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+}
+
 #menu_icon,
 #cart_icon {
   cursor: pointer;
@@ -619,4 +631,12 @@ Menu component
   padding-top: 100px;
 }
 
+#cart_component {
+
+  .product_list {
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}
 
