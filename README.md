@@ -2,6 +2,8 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
+## Google slides 
+https://docs.google.com/presentation/d/11ITeyxMZnq744KNTaDhulh_DwwWOBQPFrx6HEpEjML4/edit
 
 ## Install node_modules
 Install node js https://nodejs.org/en/
