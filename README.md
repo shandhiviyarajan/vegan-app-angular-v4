@@ -4,7 +4,8 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 
 ## Install node_modules
-`npm install` to install node_modules
+Install node js https://nodejs.org/en/
+then `npm install` to install node_modules
 
 
 ## Run the App
