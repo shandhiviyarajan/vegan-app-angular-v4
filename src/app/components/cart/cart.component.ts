@@ -46,9 +46,7 @@ export class CartComponent implements OnInit {
                             alert("No items found !");
                             this.no_cart_items = true;
                         } else {
-                            CartService.CART_COUNT = success.length;
                             this.cart_items = success;
-
                         }
                     },
                     error => {

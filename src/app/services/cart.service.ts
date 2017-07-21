@@ -15,7 +15,6 @@ export class CartService {
     constructor(private http: Http) {
     }
 
-    public static CART_COUNT: number = 0;
 
     //Add to cart
     public addToCart(cart) {

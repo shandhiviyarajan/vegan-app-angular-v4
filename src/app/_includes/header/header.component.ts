@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() {
         this.getUserInfo();
-        this.cart_count = CartService.CART_COUNT;
+
     }
 
     public getUserInfo() {
